@@ -1,0 +1,45 @@
+break fs/open.c:150
+    comm
+        start_output
+        print current->pid
+        print current->state
+        print filename
+        print fd
+        stop_output
+    end
+break fs/open.c:158
+    comm
+        start_output
+        print current->pid
+        print current->close_on_exec
+        print filename
+        print file_table
+        stop_output
+    end
+break fs/open.c:203
+    comm
+        start_output
+        print filename
+        print current->filp[fd]
+        print current->filp[fd]->f_mode
+        print current->filp[fd]->f_flags
+        print current->filp[fd]->f_count
+        print current->filp[fd]->f_inode
+        print current->filp[fd]->f_pos
+        print current->filp[fd]->f_inode->i_mode
+        print current->filp[fd]->f_inode->i_uid
+        print current->filp[fd]->f_inode->i_size
+        print current->filp[fd]->f_inode->i_mtime
+        print current->filp[fd]->f_inode->i_gid
+        print current->filp[fd]->f_inode->i_nlinks
+        print current->filp[fd]->f_inode->i_zone[0]
+        print current->filp[fd]->f_inode->i_zone[1]
+        print current->filp[fd]->f_inode->i_zone[2]
+        print current->filp[fd]->f_inode->i_zone[3]
+        print current->filp[fd]->f_inode->i_zone[4]
+        print current->filp[fd]->f_inode->i_zone[5]
+        print current->filp[fd]->f_inode->i_zone[6]
+        print current->filp[fd]->f_inode->i_zone[7]
+        print current->filp[fd]->f_inode->i_zone[8]
+        stop_output
+    end
